@@ -1,4 +1,4 @@
-import EventHandlerInterface from "../../../@shared/event-handler.interface";
+import EventHandlerInterface from "../../../@shared/events/event-handler.interface";
 import { ProductCreatedEvent } from "../product-created.event";
 
 export default class SendEmailWhenProductIsCreatedHandler implements EventHandlerInterface<ProductCreatedEvent> {

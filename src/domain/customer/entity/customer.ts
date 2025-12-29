@@ -1,25 +1,35 @@
+import Entity from "../../@shared/entity/entity.abstract";
+import NotificationErros from "../../@shared/notification/notification.error";
 import { Address } from "../valoe-object/adress";
 
-export class Customer {
-    private _id: string;
+export class Customer extends Entity {
     private _name: string;
     private _address?: Address;
     private _active: boolean = false;
     private _rewardPoints: number = 0;
 
     constructor(id: string, name: string) {
-        this._id = id;
+        super();
+        this.id = id;
         this._name = name;
 
         this.validate();
+
+        if (this.notifications.hasErrors()) {
+            throw new NotificationErros(this.notifications.getErrors());
+        }
     }
 
     validate(): void {
-        if (this._id.length === 0) {
-            throw new Error("ID is required");
+        if (this.id.length === 0) {
+            this.notifications.addError({
+                context: "customer", message: "Id is required",
+            });
         }
         if (this._name.length === 0) {
-            throw new Error("Name is required");
+            this.notifications.addError({
+                context: "customer", message: "Name is required",
+            });
         }
     }
 
@@ -50,9 +60,7 @@ export class Customer {
         this._rewardPoints += points;
     }
 
-    get id(): string {
-        return this._id;
-    }
+
     get rewardPoints(): number {
         return this._rewardPoints;
     }
