@@ -6,15 +6,23 @@ describe('Customer unit test Entity', () => {
 
         expect(() => {
             const customer = new Customer("", "John Doe");
-        }).toThrow("ID is required");
+        }).toThrow("customer: Id is required");
     });
 
     it('should throw error when name is empty', () => {
 
         expect(() => {
             const customer = new Customer("123", "");
-        }).toThrow("Name is required");
+        }).toThrow("customer: Name is required");
     });
+
+    it('should throw error when id and name is empty', () => {
+
+        expect(() => {
+            const customer = new Customer("", "");
+        }).toThrow("customer: Id is required, customer: Name is required");
+    });
+
 
     it('should throw error when name is empty', () => {
         //Arrange
