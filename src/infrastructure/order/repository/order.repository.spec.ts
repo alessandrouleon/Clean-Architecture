@@ -2,7 +2,7 @@ import { Sequelize } from 'sequelize-typescript';
 import { Order } from '../../../domain/checkout/entity/order';
 import { OrderItem } from '../../../domain/checkout/entity/order-item';
 import { Customer } from '../../../domain/customer/entity/customer';
-import { Address } from '../../../domain/customer/valoe-object/adress';
+import { Address } from '../../../domain/customer/value-object/adress';
 import { Product } from '../../../domain/product/entity/product';
 import CustomerRepository from '../../customer/repository/customer.repository';
 import CustomerModel from '../../customer/repository/sequelize/customer.model';

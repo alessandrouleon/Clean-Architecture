@@ -7,6 +7,7 @@
 ## npm install nodemon
 ## npm install -D supertest
 ## npm install -D @types/supertest
+## npm install yup
 
 
 

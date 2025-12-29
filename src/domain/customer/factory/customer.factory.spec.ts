@@ -1,4 +1,4 @@
-import { Address } from "../valoe-object/adress";
+import { Address } from "../value-object/adress";
 import CustomerFactory from "./customer.factory";
 
 describe('Customer factory unit test', () => {

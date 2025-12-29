@@ -1,5 +1,5 @@
 import CustomerFactory from "../../../domain/customer/factory/customer.factory";
-import { Address } from "../../../domain/customer/valoe-object/adress";
+import { Address } from "../../../domain/customer/value-object/adress";
 import UpdateCustomerUseCase from "./update.customer.usecase";
 
 const customer = CustomerFactory.createWithAddress(

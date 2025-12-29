@@ -1,6 +1,7 @@
 import Entity from "../../@shared/entity/entity.abstract";
 import NotificationErros from "../../@shared/notification/notification.error";
-import { Address } from "../valoe-object/adress";
+import CustomerValidatorFactory from "../factory/customer.validator.factory";
+import { Address } from "../value-object/adress";
 
 export class Customer extends Entity {
     private _name: string;
@@ -21,16 +22,7 @@ export class Customer extends Entity {
     }
 
     validate(): void {
-        if (this.id.length === 0) {
-            this.notifications.addError({
-                context: "customer", message: "Id is required",
-            });
-        }
-        if (this._name.length === 0) {
-            this.notifications.addError({
-                context: "customer", message: "Name is required",
-            });
-        }
+        CustomerValidatorFactory.create().validate(this);
     }
 
     changeName(name: string): void {
