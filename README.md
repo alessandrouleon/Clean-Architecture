@@ -8,6 +8,7 @@
 ## npm install -D supertest
 ## npm install -D @types/supertest
 ## npm install yup
+## npm i jstoxml -D @types/jstoxml
 
 
 

@@ -14,7 +14,7 @@ module.exports = {
   testPathIgnorePatterns: ['/dist/'],
 
   transformIgnorePatterns: [
-    '/node_modules/(?!uuid)/'
+    '/node_modules/(?!(uuid|jstoxml)/)'
   ],
 
 };
